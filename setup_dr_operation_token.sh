@@ -32,7 +32,3 @@ VAULT_TOKEN=$VAULT_PRIMARY_TOKEN vault write auth/token/roles/failover-handler \
     orphan=true \
     renewable=false \
     token_type=batch
-
-VAULT_DR_OP_TOKEN=$(VAULT_TOKEN=$VAULT_PRIMARY_TOKEN vault token create \
-    -field=token -role=failover-handler -ttl=24h)
-
